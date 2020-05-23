@@ -1,0 +1,4 @@
+
+../startform3 -S form.set -d CLASS=c_hggnlo -d PROBLEM=hggnlo -d LOOPS=2 -d DIAFILE=d2l.dia -d RESDIR=results -d DIAGRAM=d2l1 generic/maindia.frm
+
+../startform3 -S form.set -d CLASS=c_hggnlo -d PROBLEM=hggnlo -d LOOPS=2 -d DIAFILE=d2l.dia -d RESDIR=results -d START=1 -d END=23 generic/comdia.frm

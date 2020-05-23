@@ -1,0 +1,134 @@
+*--#[ GLOBAL :
+*
+
+#define LOWLIMM1 "-6"
+#define GAUGE "1"
+#define NUMEXTMOM "3"
+
+*
+*--#] GLOBAL :
+
+
+*--#[ TREAT0 :
+*
+
+*
+*--#] TREAT0 :
+
+*--#[ TREAT1 :
+*
+
+*---------------------Projector------------------------------------------------
+
+multiply, ( deno(2,-2)*q2.q3^-2 )*( [A] * ( d_(mu1, mu2)*q2.q3 - q2(mu2)*q3(mu1) - q2(mu1)*q3(mu2) )
+          + [B] * ( -q2.q3*d_(mu1,mu2) + q2(mu2)*q3(mu1) + nom(3,-2)*q2(mu1)*q3(mu2) ) );
+.sort
+
+*
+*--#] TREAT1 :
+
+*--#[ TREAT2 :
+*
+
+*
+*--#] TREAT2 :
+
+*--#[ TREAT3 :
+*
+
+*
+*--#] TREAT3 :
+
+*--#[ TREAT4 :
+*
+
+* Kinematical identities;
+id Q1 = Q2 + Q3;
+id p11 = p12 + p13;
+id Q2.Q2 = 0;
+id Q3.Q3 = 0;
+id Q2.Q3^x? = (-mH^2/2)^x;
+
+
+* This is to not include the dot product p12.p13 into totensor;
+id p12.p13 = [p12p13];
+
+* Discarding sub-leading terms
+if ( count(Q2,1,Q3,1) > 4 ) discard;
+
+* Discarding odds terms, which integrate to zero;
+if ( count(Q2,1,Q3,1) != multipleof(2) ) discard;
+
+* Creating totensor structures for p2 and p3;
+totensor nosquare p12, gnTp2;
+totensor nosquare p13, gnTp3;
+
+* Returning the dot product p12.p13;
+id [p12p13] = p12.p13;
+
+* Tensor structure of rank 2;
+if ( count(Q2,1,Q3,1) == 2 );
+  if ( match( gnTp2(i1?, i2?) ) );
+    id gnTp2(i1?,i2?) = deno(4,-2) * d_(i1,i2) * p12.p12;
+  endif;
+  if ( match( gnTp2(i1?)*gnTp3(i2?) ) );
+    id gnTp2(i1?)*gnTp3(i2?) = deno(4,-2) * d_(i1,i2) * p12.p13;
+  endif;
+  if ( match( gnTp3(i1?, i2?) ) );
+    id gnTp3(i1?,i2?) = deno(4,-2) * d_(i1,i2) * p13.p13;
+  endif;
+endif;
+
+
+* Tensor structure of rank 4;
+if ( count(Q2,1,Q3,1) == 4 );
+
+* 4 p2;
+  if ( match( gnTp2(i1?,i2?,i3?,i4?) ) );
+    id gnTp2(i1?,i2?,i3?,i4?) = deno(4,-2)*deno(6,-2)*p12.p12^2*( d_(i1,i2)*d_(i3,i4) + d_(i1,i3)*d_(i2,i4) + d_(i1,i4)*d_(i2,i3) );
+  endif;
+
+* 4 p3;
+  if ( match( gnTp3(i1?,i2?,i3?,i4?) ) );
+    id gnTp3(i1?,i2?,i3?,i4?) = deno(4,-2) * deno(6,-2) *p13.p13^2 * ( d_(i1,i2)*d_(i3,i4) + d_(i1,i3)*d_(i2,i4) + d_(i1,i4)*d_(i2,i3) );
+  endif;
+
+* 3 p2 and 1 p3;
+  if ( match( gnTp2(i1?,i2?,i3?)*gnTp3(i4?) ) );
+    id gnTp2(i1?,i2?,i3?)*gnTp3(i4?) = deno(4,-2)*deno(6,-2) * p12.p12 * p12.p13 * ( d_(i1,i2)*d_(i3,i4) + d_(i1,i3)*d_(i2,i4) + d_(i1,i4)*d_(i2,i3) );
+  endif;
+
+* 2 p2 and 2 p3;
+  if ( match( gnTp2(i1?,i2?)*gnTp3(i3?,i4?) ) );
+    id gnTp2(i1?,i2?)*gnTp3(i3?,i4?) = deno(4,-2) * deno(6,-2) * deno(3,-2)
+    * ( ( nom(4,-2) * p12.p13^2 - p12.p12*p13.p13 )*( d_(i1,i3)*d_(i2,i4) + d_(i1,i4)*d_(i2,i3) ) + ( nom(5,-2)*p12.p12*p13.p13 - 2*p12.p13^2 )*( d_(i1,i2)*d_(i3,i4) ) );
+  endif;
+
+* 1 p2 and 3 p3;
+  if ( match( gnTp2(i1?)*gnTp3(i2?,i3?,i4?) ) );
+    id gnTp2(i1?)*gnTp3(i2?,i3?,i4?) = deno(4,-2)*deno(6,-2) * p13.p13 * p12.p13 * ( d_(i1,i2)*d_(i3,i4) + d_(i1,i3)*d_(i2,i4) + d_(i1,i4)*d_(i2,i3) );
+  endif;
+
+endif;
+
+id Q2.Q2 = 0;
+id Q3.Q3 = 0;
+id Q2.Q3^x? = (-mH^2/2)^x;
+.sort
+
+format Mathematica;
+
+*
+*--#] TREAT4 :
+
+*--#[ TREATMAIN :
+*
+*
+*--#] TREATMAIN :
+
+*--#[ TREATCOL :
+*
+  multiply, ( prop(a(1),a(2))/ng );
+  .sort
+*
+*--#] TREATCOL :
