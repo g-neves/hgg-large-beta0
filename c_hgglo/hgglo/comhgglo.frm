@@ -6,8 +6,7 @@
 v Q1,Q2;
 s mH, M1;
 s i, pi, alphas, vev;
-cf gnacc;
-s x1, n;
+
 
 
 .global
@@ -24,9 +23,6 @@ id Q1.Q1 = 0;
 id Q2.Q2 = 0;
 id nc^2/ng = 1 + 1/ng;
 id Q1.Q2 = -mH^2/2;
-*id gnacc(x1?) = x1;
-*id n = 4 - 2*ep;
-*id Tf = 1/2;
 multiply, ( -i/(16*pi^2) )*4*pi*alphas*M1/vev;
 id ep=0;
 .sort
