@@ -1,0 +1,97 @@
+*
+* 1-loop diagrams for H -> gg
+*
+
+*------------------------------------------------------------
+
+
+*--#[ fqcd1l1 :
+
+	1
+	*GM(a(2),j1,j6)
+	*d_(j6,j5)
+	*d_(j5,j4)
+	*d_(j4,j3)
+	*GM(a(1),j3,j2)
+	*d_(j2,j1)
+	;
+
+*--#] fqcd1l1 :
+
+
+*--#[ d1l1 :
+
+	(-1)
+	*FT1(
+		L,16,+p11,pM1,M1,pM1,exp,-q1,pQ1,16,L
+	)
+	*FT1(mu1)
+	*FT1(
+		L,19,+p11,pM1,M1,pM1,19,L
+	)
+	*FT1(mu2)
+	*FT1(
+		L,13,+p11,pM1,M1,pM1,exp,+q2,pQ2,13,L
+	)
+	;
+
+	#define INT1 "tad1l"
+	#define MASS1 "M1"
+	#define DALA1 "0"
+
+*--#] d1l1 :
+
+*--#[ expd1l1 :
+*
+	multiply, eM1^1*pM1^4;
+	#call denoexp{M1}
+	#include matad.info # time
+*
+*--#] expd1l1 :
+
+* ------------------------------------------------------------
+
+*--#[ fqcd1l2 :
+
+	1
+	*GM(a(2),j6,j1)
+	*d_(j1,j2)
+	*GM(a(1),j2,j3)
+	*d_(j3,j4)
+	*d_(j4,j5)
+	*d_(j5,j6)
+	;
+
+*--#] fqcd1l2 :
+
+*--#[ d1l2 :
+
+	(-1)
+	*FT1(
+		L,16,-p11,pM1,M1,pM1,exp,-q2,pQ1,16,L
+	)
+	*FT1(mu2)
+	*FT1(
+		L,19,-p11,pM1,M1,pM1,19,L
+	)
+	*FT1(mu1)
+	*FT1(
+		L,13,-p11,pM1,M1,pM1,exp,+q1,pQ1,13,L
+	)
+	;
+
+	#define INT1 "tad1l"
+	#define MASS1 "M1"
+	#define DALA1 "0"
+
+*--#] d1l2 :
+
+*--#[ expd1l2 :
+*
+	multiply,eM1^1*(pM1^4)^1;
+	#call denoexp{M1}
+	#include matad.info # time
+*
+*--#] expd1l2 :
+
+* ------------------------------------------------------------

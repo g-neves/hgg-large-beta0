@@ -1,0 +1,4 @@
+
+../startform3 -S form.set -d CLASS=c_hgglo -d PROBLEM=hgglo -d LOOPS=1 -d DIAFILE=hgglo.dia -d RESDIR=results -d DIAGRAM=d1l1 generic/maindia.frm
+
+../startform3 -S form.set -d CLASS=c_hgglo -d PROBLEM=hgglo -d LOOPS=1 -d DIAFILE=hgglo.dia -d RESDIR=results -d START=1 -d END=2 generic/comdia.frm

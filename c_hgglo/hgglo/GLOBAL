@@ -1,0 +1,53 @@
+*--#[ GLOBAL :
+*
+
+#define LOWLIMM1 "-2"
+#define GAUGE "0"
+#define NUMEXTMOM "2"
+
+*
+*--#] GLOBAL :
+
+
+*--#[ TREAT0 :
+*
+*
+*--#] TREAT0 :
+
+*--#[ TREAT1 :
+*
+  multiply, ( deno(2,-2)*(q1.q2)^(-2) )*( [A] * ( d_(mu1, mu2)*(q1.q2) - q1(mu2)*q2(mu1) - q1(mu1)*q2(mu2) ) + [B] * ( -(q1.q2)*d_(mu1,mu2) + q1(mu2)*q2(mu1) + (3 - 2*ep)*q1(mu1)*q2(mu2) ) );
+  .sort
+*
+*--#] TREAT1 :
+
+*--#[ TREAT2 :
+*
+*
+*--#] TREAT2 :
+
+*--#[ TREAT3 :
+*
+*
+*--#] TREAT3 :
+
+*--#[ TREAT4 :
+*
+id Q1.Q1 = 0;
+id Q2.Q2 = 0;
+id Q1.Q2^x1? = (-mH^2/2)^x1;
+
+*
+*--#] TREAT4 :
+
+*--#[ TREATMAIN :
+*
+*
+*--#] TREATMAIN :
+
+*--#[ TREATCOL :
+*
+  multiply, ( prop(a(1),a(2))/ng );
+  .sort
+*
+*--#] TREATCOL :
