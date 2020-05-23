@@ -1,0 +1,38 @@
+*
+* tad2l adapted for our case
+*
+
+
+*---Kinematical identities since I did p1 = p2 + p3 in the tensor reduction-----
+
+id p2.p2 = s2m^-1 - M^2;
+id p2.p3 = (s1m^-1 - s2m^-1 - p3.p3)/2;
+.sort
+
+*----------Excluding scaleless integrals----------------------------------------
+
+id s1m^a1?*s2m^a2?/p3.p3^a3? = f(a1,a2,a3);
+
+id f(a1?,a2?neg0_,a3?) = 0;
+id f(a1?neg0_,a2?,a3?) = 0;
+.sort
+
+*---------Performing the momentum integration-----------------------------------
+
+id f(a1?,a2?,a3?) = M^(2*(4 - a1-a2-a3))
+                    * Gam(a1+a3-2,1)*Gam(a2+a3-2,1)*Gam(2-a3,-1)*iGam(a1,0)*iGam(a2,0)*iGam(2,-1)
+                    * Gam(a1+a2+a3-4,2)*iGam(a1+a2+2*a3-4,2);
+.sort
+
+
+*-----Simplifying the expression------------------------------------------------
+
+#call simpfin()
+#include expandnomdeno
+#include redcut
+#include expepgam
+
+id ep = 0;
+
+*---------brackets--------------------------------------------------------------
+b M1, eM1, mH;
