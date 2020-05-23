@@ -1,0 +1,51 @@
+*
+* tad2l adapted for our case
+*
+
+*---Kinematical identities since I did p1 = p2 + p3 in the tensor reduction-----
+
+id p2.p2 = s2m^-1 - M^2;
+id p2.p3 = (s1m^-1 - s2m^-1 - p3.p3)/2;
+.sort
+
+*------------Convoluting all possible u functions-------------------------------
+
+*repeat;
+*  id, once Denu2(u1?)*Denu2(u2?) = Denu2(u1 + u2);
+*  id, once gnpref(u1?)*gnpref(u2?) = gnpref(u1 + u2);
+*endrepeat;
+
+*.sort
+
+*----------Excluding scaleless integrals----------------------------------------
+
+id s1m^a1?*s2m^a2?/p3.p3^a3? = f(a1,a2,a3);
+
+id f(a1?,a2?neg0_,a3?) = 0;
+id f(a1?neg0_,a2?,a3?) = 0;
+.sort
+
+*---------Performing the momentum integration-----------------------------------
+
+id f(a1?,a2?,a3?)*Denu(u?) = eMu(u) * M^(2*(4 - a1-a2-a3))
+                    * Gam(a1+a3-2,1,u)*Gam(a2+a3-2,1,u)*Gam(2-a3,-1,-u)*iGam(a1,0,0)*iGam(a2,0,0)*iGam(2,-1,0)
+                    * Gam(a1+a2+a3-4,2,u)*iGam(a1+a2+2*a3-4,2,2*u);
+.sort
+
+*-----Simplifying the expression------------------------------------------------
+
+* Simplifying some Gamma-functions
+
+*id Gam(x1?,x2?,x3?)*iGam(x1?,x2?,x3?) = 1;
+
+* I'm not calling any Simplifying built-in function.
+
+#call simpfin()
+#include expandnomdeno
+#include redcut
+#include expepgam
+
+*id ep = 0;
+
+*---------brackets--------------------------------------------------------------
+b M1, eM1, mH;
