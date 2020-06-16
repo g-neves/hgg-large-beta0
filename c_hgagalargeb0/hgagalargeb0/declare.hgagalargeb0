@@ -1,0 +1,19 @@
+s [A],[B];
+s Tf,d, nc, Cf, Ca;
+s mH, [p12p13];
+ct gnTp2, gnTp3;
+cf fu, Denu, Dgu;
+s u1,u2,u3,u;
+s Y,i,j;
+cf Gamma, iGamma;
+
+cf f;
+s a1,a2,a3,a4;
+
+s Xi;
+s gnk;
+
+v p3,q;
+
+cf Denu,Du,bin, dummy eMu;
+cf Denu1, Denu2, gnpref, gnacc;

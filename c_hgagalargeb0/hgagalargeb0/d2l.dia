@@ -1,0 +1,737 @@
+*
+* 2-loop diagrams for H -> gamma+gamma
+*
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l1 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(11),j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *GM(b(12),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l1 :
+
+*--#[ d2l1 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,1,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,2,+p12,pM1,M1,pM1,2,L
+  )
+  *(1)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,exp,-q1,pQ1,3,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,-q3,pQ3,4,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l1 :
+
+*--#[ expd2l1 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l1 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l2 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(12),j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *GM(b(11),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l2 :
+
+*--#[ d2l2 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,1,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,2,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,exp,+q2,pQ2,3,L
+  )
+  *(1)
+  *FT1(
+    L,4,+p11,pM1,M1,pM1,exp,-q3,pQ3,4,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l2 :
+
+*--#[ expd2l2 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l2 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l3 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(12),j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *GM(b(11),j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l3 :
+
+*--#[ d2l3 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,exp,+q3,pQ3,1,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,+q3,pQ3,2,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,exp,+q1,pQ1,3,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,+q1,pQ1,4,L
+  )
+  *(1)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l3 :
+
+*--#[ expd2l3 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l3 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l4 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *GM(b(11),j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *GM(b(12),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l4 :
+
+*--#[ d2l4 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,1,L
+  )
+  *(1)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,-q1,pQ1,2,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,exp,-q1,pQ1,3,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,-q3,pQ3,4,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l4 :
+
+*--#[ expd2l4 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l4 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l5 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(12),j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *GM(b(11),j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l5 :
+
+*--#[ d2l5 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,exp,+q1,pQ1,1,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,+q1,pQ1,2,L
+  )
+  *(1)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,3,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,4,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,exp,+q1,pQ1,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l5 :
+
+*--#[ expd2l5 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l5 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l6 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *GM(b(11),j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *GM(b(12),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l6 :
+
+*--#[ d2l6 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,1,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,+q2,pQ2,2,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,exp,+q2,pQ2,3,L
+  )
+  *(1)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,-q3,pQ3,4,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l6 :
+
+*--#[ expd2l6 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l6 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l7 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *GM(b(11),j5,j4)
+  *d_(j4,j3)
+  *GM(b(12),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l7 :
+
+*--#[ d2l7 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,exp,+q3,pQ3,1,L
+  )
+  *(1)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,-q2,pQ2,2,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,3,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,4,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l7 :
+
+*--#[ expd2l7 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l7 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l8 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(12),j9,j8)
+  *d_(j8,j7)
+  *GM(b(11),j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l8 :
+
+*--#[ d2l8 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,1,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,2,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,3,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,+q2,pQ2,4,L
+  )
+  *(1)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l8 :
+
+*--#[ expd2l8 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l8 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l9 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *d_(j7,j6)
+  *d_(j6,j5)
+  *GM(b(11),j5,j4)
+  *d_(j4,j3)
+  *GM(b(12),j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l9 :
+
+*--#[ d2l9 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,exp,+q3,pQ3,1,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,exp,+q1,pQ1,2,L
+  )
+  *(1)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,3,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,4,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l9 :
+
+*--#[ expd2l9 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l9 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l10 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *GM(b(12),j9,j8)
+  *d_(j8,j7)
+  *GM(b(11),j7,j6)
+  *d_(j6,j5)
+  *d_(j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l10 :
+
+*--#[ d2l10 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,1,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,2,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,3,L
+  )
+  *(1)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,exp,-q1,pQ1,4,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,exp,-q3,pQ3,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l10 :
+
+*--#[ expd2l10 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l10 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l11 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *GM(b(11),j7,j6)
+  *d_(j6,j5)
+  *GM(b(12),j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l11 :
+
+*--#[ d2l11 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p11,pM1,M1,pM1,exp,+q1,pQ1,1,L
+  )
+  *(1)
+  *FT1(
+    L,2,+p11,pM1,M1,pM1,2,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,3,+p12,pM1,M1,pM1,3,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,4,+p11,pM1,M1,pM1,4,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,5,+p11,pM1,M1,pM1,exp,+q2,pQ2,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l11 :
+
+*--#[ expd2l11 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l11 :
+
+*-------------------------------------------------------------------------------
+
+*--#[ fqcd2l12 :
+
+  d_(j1,j10)
+  *d_(j10,j9)
+  *d_(j9,j8)
+  *d_(j8,j7)
+  *GM(b(12),j7,j6)
+  *d_(j6,j5)
+  *GM(b(11),j5,j4)
+  *d_(j4,j3)
+  *d_(j3,j2)
+  *d_(j2,j1)
+  *prop(b(11),b(12))
+  ;
+
+*--#] fqcd2l12 :
+
+*--#[ d2l12 :
+
+  (-1)
+  *FT1(mu2)
+  *FT1(
+    L,1,+p12,pM1,M1,pM1,exp,-q2,pQ2,1,L
+  )
+  *FT1(mu1)
+  *FT1(
+    L,2,+p12,pM1,M1,pM1,2,L
+  )
+  *FT1(nu12)
+  *FT1(
+    L,3,+p11,pM1,M1,pM1,3,L
+  )
+  *FT1(nu11)
+  *FT1(
+    L,4,+p12,pM1,M1,pM1,4,L
+  )
+  *(1)
+  *FT1(
+    L,5,+p12,pM1,M1,pM1,exp,-q1,pQ1,5,L
+  )
+  *Dg(
+    nu11,nu12,L,6,+p13,pM1,6,L
+  )
+  ;
+
+  #define INT1 "gnlargeB0tad2l"
+  #define MASS1 "M1"
+  #define DALA1 "0"
+
+*--#] d2l12 :
+
+*--#[ expd2l12 :
+
+  multiply, (eM1*pM1^4)^2;
+  #call denoexp{M1}
+  #include matad.info # time
+
+*--#] expd2l12 :
+
+*-------------------------------------------------------------------------------
